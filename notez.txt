@@ -1,0 +1,17 @@
+1- Instalamos socket.io
+2- Importamos { Server } from 'socket.io'
+3- El app.listen lo guardamos en una variable server, trayendo toda la configuracion del servidor con http
+4- Iniciamos socketServer pasandole el server como parametro
+5- Iniciamos un evento al socketServer con 'on'
+6- Desde nuestro handlebars, importamos con un script(cdn) '/socket.io/socekt.io.js'
+7- Dentro de public creamos una carpeta 'js' y dentro un archivo.js, el cual lo importamos dentro del handlebars
+8- Al ser un archivo estatico necesitamos decirle a la app que lo vamos a usar
+9- En el archivo.js iniciamos en una variable socket = io()
+10- Desde el archivo.js emitimos algo acompañado de la informacion que quiero pasar
+11- Desde app.js escuchamos eso que emitimos
+
+Aclaraciones
+- Al escribir desde el app.js estamos programando para el socket del server pero desde archivo.js estoy pensando como el socket de un frontend
+- Hasta que no se emita un mensaje y de otro lado se reciba, no hay dualidad
+- El emit del app.js es distinto
+- Si hacemos un emit desde el socketClient solo le va a llegar al cliente que haya enviado el mensaje, pero con socketServer le llega a todos los que esten conectados
